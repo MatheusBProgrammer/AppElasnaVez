@@ -1,8 +1,18 @@
 import React from "react";
-import { View, StyleSheet, ImageBackground, SafeAreaView } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  SafeAreaView,
+  TouchableOpacity,
+  Text,
+  Dimensions,
+} from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons"; // Importando o Icon do pacote de ícones MaterialCommunityIcons
 
-// Considerando que você mantenha a imagem de fundo no mesmo local
 const backgroundImagePath = "../assets/imgs/menubackground.jpg";
+
+const windowWidth = Dimensions.get("screen").width;
 
 const Menu = ({ navigation }) => {
   return (
@@ -10,7 +20,27 @@ const Menu = ({ navigation }) => {
       source={require(backgroundImagePath)}
       style={styles.background}
     >
-      <SafeAreaView />
+      <SafeAreaView style={styles.container}>
+        <View style={styles.page}>
+          <View style={styles.menuItens}>
+            <TouchableOpacity onPress={() => {}}>
+              <Text>
+                <Icon name="menu" size={60} color="#ffffff" />
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <Text>
+                <Icon name="home" size={100} color="#ffffff" />
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <Text>
+                <Icon name="chat" size={60} color="#ffffff" />
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
     </ImageBackground>
   );
 };
@@ -21,6 +51,19 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    justifyContent: "center", // Centraliza os ícones na tela
+    alignItems: "center", // Alinha ícones ao centro
+  },
+  page: {
+    justifyContent: "flex-end",
+    flex: 1,
+  },
+  menuItens: {
+    marginBottom: 50,
+    flexDirection: "row",
+    width: windowWidth,
+    alignItems: "baseline",
+    justifyContent: "space-around",
   },
 });
 
