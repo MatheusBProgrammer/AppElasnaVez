@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import Home from "./src/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -11,8 +11,13 @@ export default function App() {
     <NavigationContainer>
       <SafeAreaView />
       <StatusBar style="auto" />
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
+      <Stack.Navigator
+        initialRouteName="Início"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Início" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
