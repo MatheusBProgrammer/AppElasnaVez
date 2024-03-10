@@ -11,11 +11,10 @@ import {
 import React from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-// Pega as dimensões da tela
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <ImageBackground source={require("../assets/imgs/homebackground.png")}>
       <SafeAreaView />
@@ -25,13 +24,13 @@ const Home = () => {
           <Image
             style={styles.tinyLogo}
             source={require("../assets/imgs/logoelasnavez.png")}
-            resizeMode="contain" // Garante que a imagem será redimensionada mantendo suas proporções
+            resizeMode="contain"
           />
         </View>
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            alert("Olá");
+            navigation.navigate("Menu");
           }}
         >
           <FontAwesome5
@@ -56,10 +55,10 @@ const styles = StyleSheet.create({
   backgroundimage: { resizeMode: "repeat" },
   tinyLogo: {
     marginRight: 10,
-    width: windowWidth * 0.7, // Define a largura para 50% da largura da tela
-    height: windowHeight * 0.3, // Define a altura para 50% da altura da tela
-    maxWidth: 300, // Você pode definir um maxWidth para evitar que a imagem fique muito grande em telas grandes
-    maxHeight: 300, // O mesmo para a altura
+    width: windowWidth * 0.7,
+    height: windowHeight * 0.3,
+    maxWidth: 300,
+    maxHeight: 300,
   },
   button: {
     marginRight: 25,
