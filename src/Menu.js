@@ -23,19 +23,19 @@ const Menu = ({ navigation }) => {
       <SafeAreaView style={styles.container}>
         <View style={styles.page}>
           <View style={styles.menuItens}>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate("timeline")}>
               <Text>
-                <Icon name="menu" size={60} color="#ffffff" />
+                <Icon name="menu" size={60} color="#532424" />
               </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {}}>
               <Text>
-                <Icon name="home" size={100} color="#ffffff" />
+                <Icon name="home" size={100} color="#532424" />
               </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {}}>
               <Text>
-                <Icon name="chat" size={60} color="#ffffff" />
+                <Icon name="chat" size={60} color="#532424" />
               </Text>
             </TouchableOpacity>
           </View>
